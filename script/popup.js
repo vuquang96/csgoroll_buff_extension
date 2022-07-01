@@ -1,8 +1,7 @@
-chrome.storage.sync.get(["cb_conversionprice_csgoroll", "cb_conversionprice_buff", 'cb_priceMin', 'cb_priceMax', 'cb_desired_ratio', 'cb_rate_bonus_csgoroll'], function(items) {
+chrome.storage.sync.get(["cb_conversionprice_csgoroll", "cb_conversionprice_buff", 'cb_priceMin', 'cb_priceMax', 'cb_rate_bonus_csgoroll'], function(items) {
     document.getElementById("cb_conversionprice_csgoroll").value = items["cb_conversionprice_csgoroll"] || "14.5";
     document.getElementById("cb_conversionprice_buff").value = items["cb_conversionprice_buff"] || "3.7";
 
-    document.getElementById("cb_desired_ratio").value = items["cb_desired_ratio"] || "5";
     document.getElementById("cb_rate_bonus_csgoroll").value = items["cb_rate_bonus_csgoroll"] || "12";
 
     document.getElementById("cb_priceMin").value = items["cb_priceMin"] || "100";
@@ -13,7 +12,6 @@ chrome.storage.sync.get(["cb_conversionprice_csgoroll", "cb_conversionprice_buff
 $("#save").click(function(){
     let cb_conversionprice_csgoroll = $("#cb_conversionprice_csgoroll").val();
     let cb_conversionprice_buff = $("#cb_conversionprice_buff").val();
-    let cb_desired_ratio = $("#cb_desired_ratio").val();
     let cb_rate_bonus_csgoroll = $("#cb_rate_bonus_csgoroll").val();
     let cb_priceMin = $("#cb_priceMin").val();
     let cb_priceMax = $("#cb_priceMax").val();
@@ -22,7 +20,6 @@ $("#save").click(function(){
     chrome.storage.sync.set({
         "cb_conversionprice_csgoroll": cb_conversionprice_csgoroll,
         "cb_conversionprice_buff": cb_conversionprice_buff,
-        "cb_desired_ratio": cb_desired_ratio,
         "cb_rate_bonus_csgoroll": cb_rate_bonus_csgoroll,
         "cb_priceMin": cb_priceMin,
         "cb_priceMax": cb_priceMax
