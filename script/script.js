@@ -84,11 +84,12 @@ jQuery(document).ready(function(){
 					setTimeout(function(){
 						$("cw-message-list").remove();
 						changeurl(`?asyn=0`, 'www.csgoroll.com');
-						chrome.storage.sync.get(["cb_conversionprice_csgoroll", "cb_conversionprice_buff", "cb_priceMin", "cb_priceMax", "cb_desired_ratio"], function (obj) {
+						chrome.storage.sync.get(["cb_conversionprice_csgoroll", "cb_conversionprice_buff", "cb_priceMin", "cb_priceMax", "cb_desired_ratio", "cb_rate_bonus_csgoroll"], function (obj) {
 						    var data = {
 						    	'cb_conversionprice_csgoroll' 	: obj.cb_conversionprice_csgoroll,
 						    	'cb_conversionprice_buff' 		: obj.cb_conversionprice_buff,
 						    	'cb_desired_ratio' 				: obj.cb_desired_ratio,
+						    	'cb_rate_bonus_csgoroll' 				: obj.cb_rate_bonus_csgoroll,
 						    	'cb_priceMin' 					: obj.cb_priceMin,
 						    	'cb_priceMax' 					: obj.cb_priceMax
 						    };
@@ -107,13 +108,15 @@ jQuery(document).ready(function(){
 
 	setTimeout(function(){
 	
-		chrome.storage.sync.get(["cb_conversionprice_csgoroll", "cb_conversionprice_buff", "cb_priceMin", "cb_priceMax", "cb_desired_ratio"], function (obj) {
+		chrome.storage.sync.get(["cb_conversionprice_csgoroll", "cb_conversionprice_buff", "cb_priceMin", "cb_priceMax", "cb_desired_ratio", "cb_rate_bonus_csgoroll"], function (obj) {
 					    var data = {
 					    	//'cb_conversionprice_csgoroll' 	: obj.cb_conversionprice_csgoroll,
-					    	'cb_conversionprice_csgoroll' 	: 16.5,
+					    	'cb_conversionprice_csgoroll' 	: 14.5,
 					    	'cb_conversionprice_buff' 		: obj.cb_conversionprice_buff,
 					    	//'cb_desired_ratio' 				: obj.cb_desired_ratio,
+					    	//'cb_rate_bonus_csgoroll' 				: obj.cb_rate_bonus_csgoroll,
 					    	'cb_desired_ratio' 				: 5,
+					    	'cb_rate_bonus_csgoroll' 				: 12,
 					    	'cb_priceMin' 					: obj.cb_priceMin,
 					    	'cb_priceMax' 					: obj.cb_priceMax
 					    };

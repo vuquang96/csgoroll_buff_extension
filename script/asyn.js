@@ -76,6 +76,7 @@ function downloadData(){
 			'buff' : data_store.cb_conversionprice_buff,
 			'csgoroll' : data_store.cb_conversionprice_csgoroll,
 			'desired_ratio' : data_store.cb_desired_ratio,
+			'rate_bonus_csgoroll' : data_store.cb_rate_bonus_csgoroll,
 		},
 		success: function(result){
 		 	var data = [];
@@ -94,8 +95,8 @@ function downloadData(){
 		 	});
 		 	var headers = [
 				'Ten do',
-				`Buff(*${data_store.cb_conversionprice_buff})`,
-				`Csgoroll(*${data_store.cb_conversionprice_csgoroll})`,
+				`Buff(*${data_store.cb_conversionprice_buff} * ${data_store.cb_desired_ratio}%)`,
+				`Csgoroll(*${data_store.cb_conversionprice_csgoroll} * ${data_store.cb_rate_bonus_csgoroll}%)`,
 				'So sanh (%)'
 			];
 			data.unshift(headers);
